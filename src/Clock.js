@@ -31,12 +31,13 @@ class Clock extends React.Component{
             date: new Date()
         });
     }
+    componentWillUnmount(){
+        clearInterval(this.timerID);
+    }
 }
 
 //juste avant de finir un life cycle et de quitter le composent, nous effaçons le contenu de l'intervalle du temps
 
-componentWillUnMount(){
-    clearInterval(this.timerID);
-}
+
 
 export default Clock;
